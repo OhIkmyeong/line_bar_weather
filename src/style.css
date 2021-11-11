@@ -1,0 +1,121 @@
+@charset "utf-8";
+:root{
+    --max:#ff8c00;
+    --max-op:#ff8c0033;
+    --avg:#af0a96;
+    --avg-op:#af0a9633;
+    --min:#009b96;
+    --min-op:#009b9633;
+    --rain:linear-gradient(to bottom,#3889e9,#002896)
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{
+    width:100%;min-height:100vh;
+    background:#fafafc;}
+
+input,select{font-size:inherit;color:inherit;}
+
+/* HEADER */
+header{
+    display:flex;flex-flow:row nowrap;
+    justify-content:space-between; align-items:center;
+    position:fixed; z-index:100;
+    top:0;left:0;
+    width:100%;
+    padding:1rem 2rem;
+    background:#000;
+    color:#fff;}
+#sel{
+    padding:.5em 1em;
+    background:transparent;
+    border:2px solid #fff;
+    font-size:1.2rem;color:yellow;
+}
+#sel option{color:#000;}
+
+/* sect_result */
+#sect_result{
+    position:relative;
+    width:90%;
+    margin:120px auto;
+    background:#fff;
+    border:1px solid #d2d2d2;
+    box-shadow:.5rem .5rem 0 0 rgba(0,0,0,.1);
+}
+
+/* article */
+.title{
+    display:block;
+    width:calc(100% - 2rem);
+    margin:1rem auto;padding:2rem;
+    background:#eaeaec;
+    border:2px dotted #000;
+    font-size:3rem;font-weight:bold;text-align:center;color:#444;
+}
+
+/* box */
+.box{
+    display:flex;flex-flow:row wrap;
+    position:relative;
+    width:calc(100% - 4rem);
+    margin:2rem auto 6rem;}
+
+.title_small{
+    position:relative;
+    width:100%;
+    padding:.5em; margin-bottom:1rem;
+    text-align:center;}
+
+    .title_small.cel_max{
+        border:5px dashed var(--max);
+        background:var(--max-op);}
+
+    .title_small.cel_avg{
+        border:5px solid var(--avg);
+        background:var(--avg-op);}
+
+    .title_small.cel_min{
+        border:5px dashed var(--min);
+        background:var(--min-op);}
+
+    .title_small.rain{
+        background:var(--rain); 
+        color:#fff;}
+
+label{
+    display:block;
+    position:relative;
+    width:calc(100% / 12);}
+
+label span{font-size:13px;font-weight:bold;}
+
+label input{
+    display:block;
+    width:90%;
+    padding:.8em 1em; margin-top:.25em;
+    border:1px solid #000; border-radius:4px;}
+
+    label input:focus{
+        border-color:transparent;
+        box-shadow:
+            3px 3px 0 rgba(0,0,0,.05),
+            6px 6px 0 rgba(0,0,0,.1),
+            9px 9px 0 rgba(0,0,0,.15)
+            ;}
+
+    label.cel_max input:focus{
+        outline:3px dashed var(--max);
+        background:var(--max-op);}
+
+    label.cel_avg input:focus{
+        outline:3px solid var(--avg);
+        background:var(--avg-op);}
+
+    label.cel_min input:focus{
+        outline:3px dashed var(--min);
+        background:var(--min-op);}
+
+    label.rain input:focus{
+        outline:3px solid blue;
+        background:var(--rain);
+        color:#fff;}
