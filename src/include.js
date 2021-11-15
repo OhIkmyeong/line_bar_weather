@@ -4,7 +4,7 @@ export async function include_select(){
     sect_sel.innerHTML = data;
 }
 
-function fetch_select(){
+export function fetch_select(){
     return fetch('./include/select.html')
     .then(res => res.text());
 }//fetch_select
