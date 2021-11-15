@@ -9,6 +9,9 @@ export let SIZE_CANVAS = {
 export function set_canvas(item){
     const canvas = document.getElementById('cv');
     const ctx = canvas.getContext('2d');
+    //change_graph_name
+    const graph_name = document.getElementById('graph_name');
+    graph_name.innerText = `${item.pid}__${item.name}`;
 
     //set size
     set_size_canvas(canvas);

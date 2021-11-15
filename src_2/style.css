@@ -7,8 +7,8 @@
 html,body{
     width:100%; min-width:500px;
     overflow:auto;
-    padding-bottom:120px;
-    font-family:'kopubDotum'; font-weight:300;}
+    padding-bottom:60px;
+    font-family:'kopubDotum'; font-weight:normal;}
 
 header{
     display:flex; flex-flow:row wrap;
@@ -21,20 +21,27 @@ header{
 
 #sel{
     padding:.8em 1em;
-    font-family:inherit;font-size:1.2rem;
+    font-family:inherit;font-size:1.2rem; font-weight:normal;
     background:transparent;
     border:2px solid #fff;
     color:cyan;
 }
-#sel option{color:#000;}
+#sel option{color:#000; font-weight:300;}
 
+/*  */
+#graph_name{
+    position:relative;
+    text-align:center;
+    margin-top:150px;
+    font-size:2rem; color:#d2d2d2;
+}
 /* canvas */
 #sect_cv,#sect_svg{ 
     outline:1px solid black;
     position:relative; overflow:hidden;
     aspect-ratio:28/34;
-    width:600px;
-    margin:160px auto 0;
+    width:400px;
+    margin:1rem auto 0;
 }
 #cv{
     outline:1px solid red;
@@ -59,7 +66,8 @@ footer{
     position:fixed;
     bottom:0;left:0;
     width:100%;
-    background:cadetblue;
+    background:rgb(3, 25, 73);
+    box-shadow:0 -10px 3rem rgba(86, 78, 242, 0.365);
 }
 #btn_cascade{
     display:block;
@@ -67,6 +75,6 @@ footer{
     width:100%;
     background:transparent;
     border:none;
-    font-family:inherit; font-weight:500; color:#fff;
+    font-family:inherit; font-weight:300; font-size:1.5rem; color:#fff;
     cursor:pointer;
 }

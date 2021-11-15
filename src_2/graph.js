@@ -73,8 +73,7 @@ function draw_line_graph(ctx,item,type){
     const center_y = y_per * 20;
 
     let prev_x = dot_x_start;
-    let prev_y = (height + y) - ((line_type
-        [0] * (y_per)) + center_y);
+    let prev_y = (height + y) - ((line_type[0] * (y_per)) + center_y);
     
     ctx.moveTo(prev_x, prev_y);
 

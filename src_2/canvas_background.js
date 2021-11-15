@@ -2,6 +2,7 @@ import { return_size_canvas } from "./canvas.js";
 import { set_info_bgBox } from "./graph.js";
 
 let SIZE_CANVAS;
+const fontWeight = '500';
 
 /* 배경 설정 */
 export function set_background_canvas(ctx){
@@ -42,15 +43,15 @@ function background_mm(ctx){
     const {wid, hei} = SIZE_CANVAS;
 
     //mm
-    const size_mm = (wid * 5) / 100;
-    ctx.font = `500 ${size_mm}px kopubDotum`;
+    const size_mm = (wid * 5.6) / 100;
+    ctx.font = `${fontWeight} ${size_mm}px kopubDotum`;
     ctx.fillStyle = '#000';
     ctx.fillText('mm',wid * 4 / 100 , wid * 3 / 100);
 
     //단위
     ctx.textAlign = "right";
-    const size_per = (wid * 5.5) / 100;
-    ctx.font = `500 ${size_per}px kopubDotum`;
+    const size_per = (wid * 5.8) / 100;
+    ctx.font = `${fontWeight} ${size_per}px kopubDotum`;
     const x_per = wid * 12 / 100;
     const y_per = (92 - 10.3) / 6;
     const y_start = hei * y_per * 0.8;
@@ -68,14 +69,14 @@ function background_celcius(ctx){
     ctx.textAlign = "left";
 
     //도
-    const size_cc = (wid * 5) / 100;
-    ctx.font = `normal ${size_cc}px kopubDotum`;
+    const size_cc = (wid * 5.3) / 100;
+    ctx.font = `${fontWeight} ${size_cc}px kopubDotum`;
     const x_cc = wid * 87 / 100;
     ctx.fillText('°C', x_cc, wid * 4 / 100);
 
     //단위
-    const size_per = (wid * 5.5) / 100;
-    ctx.font = `normal ${size_per}px kopubDotum`;
+    const size_per = (wid * 5.8) / 100;
+    ctx.font = `${fontWeight} ${size_per}px kopubDotum`;
     const x_per = wid * 88 / 100;
     const y_per = 98.5 / 6;
     const y_start = hei * y_per * 0.65;

@@ -108,11 +108,16 @@ function get_coord_y(val,keyName){
     switch(keyName){
         case "rain" : 
             /* 강수량 막대 그래프 */
+            //28 : height(box)
             return ((val * 28) / 600).toFixed(2);
             break;
             
         default :
             /* 기온 꺾은선 그래프 */
+            //31 : y(box : 3) + height(box : 28)
+            //0.56  : height(box : 28) / 50  : (30 ~ -20도 (10도씩 5스텝))
+            //11.2 : 0도 미만일때 값 (왜냐면..-20까지 있으니까??)
+
             return (31 - ((val * 0.56) + 11.2)).toFixed(2);
             break;
     }
