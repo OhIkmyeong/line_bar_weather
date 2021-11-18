@@ -43,14 +43,14 @@ function background_mm(ctx){
     const {wid, hei} = SIZE_CANVAS;
 
     //mm
-    const size_mm = (wid * 5.6) / 100;
+    const size_mm = (wid * 6) / 100;
     ctx.font = `${fontWeight} ${size_mm}px kopubDotum`;
     ctx.fillStyle = '#000';
     ctx.fillText('mm',wid * 4 / 100 , wid * 3 / 100);
 
     //단위
     ctx.textAlign = "right";
-    const size_per = (wid * 5.8) / 100;
+    const size_per = (wid * 6.5) / 100;
     ctx.font = `${fontWeight} ${size_per}px kopubDotum`;
     const x_per = wid * 12 / 100;
     const y_per = (92 - 10.3) / 6;
@@ -69,13 +69,13 @@ function background_celcius(ctx){
     ctx.textAlign = "left";
 
     //도
-    const size_cc = (wid * 5.3) / 100;
+    const size_cc = (wid * 6) / 100;
     ctx.font = `${fontWeight} ${size_cc}px kopubDotum`;
     const x_cc = wid * 87 / 100;
-    ctx.fillText('°C', x_cc, wid * 4 / 100);
+    ctx.fillText('°C', x_cc, wid * 4.5 / 100);
 
     //단위
-    const size_per = (wid * 5.8) / 100;
+    const size_per = (wid * 6.5) / 100;
     ctx.font = `${fontWeight} ${size_per}px kopubDotum`;
     const x_per = wid * 88 / 100;
     const y_per = 98.5 / 6;
@@ -94,10 +94,14 @@ function background_month(ctx){
     const y = (hei * 97) / 100;
 
     //월
+    const size_month = wid * 6 / 100;
+    ctx.font = `${fontWeight} ${size_month}px kopubDotum`;
     const x_month = (wid * 83) / 100;
     ctx.fillText('월', x_month, y);
 
     //1 ~ 9
+    const size_num = wid * 6.5 / 100;
+    ctx.font = `${fontWeight} ${size_num}px kopubDotum`;
     const m_start = (wid * 17) / 100;
     const x_per  = (wid * 5.5) / 100;
     let month = 1;
@@ -116,5 +120,5 @@ function background_month(ctx){
 
     //12
     ctx.fillText("1", m_start + (x_per * 10.8), y);
-    ctx.fillText("2", m_start + (x_per * 10.8) + (m_start / 8), y);
+    ctx.fillText("2", m_start + (x_per * 10.8) + (m_start / 7), y);
 }
