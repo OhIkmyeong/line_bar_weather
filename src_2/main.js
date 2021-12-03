@@ -13,7 +13,7 @@ include_select().then(()=>{
         //셀렉트에서 선택시 반영될 수 있도록
         set_on_select(items);
         //처음값 - 속초
-        set_canvas(items[0]);
+        set_canvas(items[0],false);
         //연속저장 버튼 세팅
         set_cascade_save(items);
     });

@@ -28,6 +28,13 @@ header{
 }
 #sel option{color:#000; font-weight:300;}
 
+[for="eng"]{
+    display:block;
+    padding:1em 2em;
+    border:1px solid #fff;
+    color:#fff;
+    cursor:pointer;}
+
 /*  */
 #graph_name{
     position:relative;

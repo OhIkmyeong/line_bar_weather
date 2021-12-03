@@ -1,5 +1,6 @@
 import {set_background_canvas} from './canvas_background.js';
 import { draw_all_graph } from './graph.js';
+import { check_eng } from './select.js';
 
 export let SIZE_CANVAS = {
     wid : undefined,
@@ -9,9 +10,13 @@ export let SIZE_CANVAS = {
 export function set_canvas(item){
     const canvas = document.getElementById('cv');
     const ctx = canvas.getContext('2d');
+    //check eng
+    const is_eng = check_eng();
+
     //change_graph_name
     const graph_name = document.getElementById('graph_name');
-    graph_name.innerText = `${item.pid}__${item.name}`;
+    const nameText = is_eng ? item.eng : item.name;
+    graph_name.innerText = `${item.pid}__${nameText}`;
 
     //set size
     set_size_canvas(canvas);
@@ -20,13 +25,13 @@ export function set_canvas(item){
     clear_canvas(canvas,ctx);
 
     //draw_background
-    set_background_canvas(ctx);
+    set_background_canvas(ctx,is_eng);
 
     //draw barGraph - rain
     draw_all_graph(ctx,item);
 
     //버튼 누르면 저장
-    set_save(canvas,item);
+    set_save(canvas,item,is_eng);
 }
 
 
@@ -52,10 +57,11 @@ function clear_canvas(canvas,ctx){
 }//set_save
 
 /* 버튼 누르면 저장 */
-function set_save(canvas,item){
+function set_save(canvas,item,is_eng){
     const btn_save = document.getElementById('btn_save');
     btn_save.href = canvas.toDataURL('image/png');
-    btn_save.download = `${item.pid}_${item.name}`;
+    const name = is_eng ? item.eng : item.name;
+    btn_save.download = `${item.pid}_${name}`;
 }//set_save
 
 /* SVG만들기 */

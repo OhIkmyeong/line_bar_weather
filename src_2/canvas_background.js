@@ -5,7 +5,7 @@ let SIZE_CANVAS;
 const fontWeight = '500';
 
 /* 배경 설정 */
-export function set_background_canvas(ctx){
+export function set_background_canvas(ctx,is_eng){
     //배경 하늘색 사각형
     background_box(ctx);
 
@@ -14,7 +14,7 @@ export function set_background_canvas(ctx){
     //우측 섭씨
     background_celcius(ctx);
     //월
-    background_month(ctx);
+    background_month(ctx,is_eng);
 }//set_background_canvas
 
 
@@ -89,15 +89,16 @@ function background_celcius(ctx){
     }
 }//background_celcius
 
-function background_month(ctx){
+function background_month(ctx,is_eng){
     const {wid,hei} = SIZE_CANVAS;
     const y = (hei * 97) / 100;
 
     //월
-    const size_month = wid * 6.5 / 100;
+    const size_month = is_eng ? wid * 5.5 / 100 : wid * 6.5 / 100;
     ctx.font = `${fontWeight} ${size_month}px kopubDotum`;
     const x_month = (wid * 83) / 100;
-    ctx.fillText('월', x_month, y);
+    const monthText = is_eng ? "Month" : '월';
+    ctx.fillText(monthText, x_month, y);
 
     //1 ~ 9
     const size_num = wid * 7.5 / 100;
